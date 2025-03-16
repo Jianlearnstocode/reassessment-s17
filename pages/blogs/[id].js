@@ -1,11 +1,17 @@
 import { createClient } from "contentful";
 import styles from "../../styles/blogPage.module.css";
+import { Card } from "../../components";
 
 const BlogItem = ({ blog }) => {
   const {
     fields: {
       blogTitle,
       blogInfo,
+      blogImage: {
+        fields: {
+          file: { url },
+        },
+      },
       blogDetails: { content },
     },
   } = blog;
@@ -14,9 +20,14 @@ const BlogItem = ({ blog }) => {
     <div className={styles.blog}>
       <section className={styles.main_blog}>
         <div className={styles.head}>
+  
           <h3>{blogTitle}</h3>
+
         </div>
         <div className={styles.info}>
+        <img
+              src={url}
+            />
           <p>{blogInfo}</p>
         </div>
         <div className={styles.details}>

@@ -6,7 +6,7 @@
     rgba(238, 238, 238, 1) 32%,
     rgba(244, 242, 241, 1) 58%
   );
-  height: 100vh;
+  min-height: 100vh;
 }
 .main_blog {
   max-width: 1200px;
